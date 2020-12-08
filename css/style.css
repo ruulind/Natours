@@ -1,0 +1,51 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* Reset CSS nya terlebih dahulu menggunakan unversal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(../img/hero.jpg);
+  /*alasan dari linear dulu dilanjut url adalah agar background warna menindih background gambar, 'to-right' adalah parameter untuk menentukan arah gradient dan tanpa 'to right', gradient akan dimulai dari atas kebawah*/
+  /* rgba berarti red-green-blue-opacity */
+  background-size: cover; /* Agar ukuran gambar selalu memenuhi tempat yang disediakan */
+  background-position: top; /* Agar bagian atas dari gambar tidak terpotong ketika layar mengecil atau membesar */
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* clip path Untuk menentukan koordinat dari elemen, ketika menggunakan clip-path pada dasarnya kita mereset koordinat menjadi 4 titik bertumpuk (atau lebih tergantung bayaknya parameter) dan mengaturnya dengan menggunakan ukuran yang kita tentukan*/
+  /* Pada polygon terdapat 4 parameter, yang menunjukan keempat sudut elemen, dengan masing masing mempunyai sumbu x dan y, dimulai dari pojok kiri atas searh jarum jam*/
+  /* 0, 0 berarti titik dimulai 0% dari kiri dan 0 dari atas */
+  /* 100%, 0 berarti titik dimulai 100% dari kiri (yang berarti kanan) dan 0 dari atas */
+  /* 100%, 0 berarti titik dimulai 100% dari kiri (yang berarti kanan) dan 75vh (75% tinggi monitor) dari atas */
+  /* 0, 100% berarti titik dimulai 0% dari kiri dan 100% dari atas */
+  /* web untuk belajar clip-path yaitu bennettfeely.com/clippy */
+}
